@@ -1,0 +1,213 @@
+<!-- <p>create-user works!</p>
+<form >    
+    <label for="name"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="name"  [(ngModel)]="service.u.name" required><br><br>
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="surname"  [(ngModel)]="service.u.surname" required><br><br>
+
+    <label for="name"><b>City</b></label>
+    <input type="text" placeholder="Enter City" name="city"  [(ngModel)]="service.u.city" required><br><br>
+
+    <label for="name"><b>Pincode</b></label>
+    <input type="text" placeholder="Enter Pincode" name="pincode"  [(ngModel)]="service.u.pincode" required><br><br>
+
+    <label for="name"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email"  [(ngModel)]="service.u.email" required><br><br>
+
+    <label for="name"><b>Date Of Birth</b></label>
+    <input type="date" name="dob" [(ngModel)]="service.u.dob" required><br><br>
+
+    <label for="name"><b>Joining Date</b></label>
+    <input type="date"  name="joiningDate" [(ngModel)]="service.u.joiningDate" required><br><br>
+
+    <label for="name"><b>Income</b></label>
+    <input type="text"  name="income" [(ngModel)]="service.u.income" required><br><br>
+       
+    <button (click)="submitdata(service.u)">Submit</button>
+
+</form>
+
+<br><br> -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>Bootstrap Sign up Form Horizontal</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<style>
+	body {
+		color: #999;
+		background: #f3f3f3;
+		font-family: 'Roboto', sans-serif;
+	}
+    .form-control {
+		border-color: #eee;
+        min-height: 41px;
+		box-shadow: none !important;
+	}
+    .form-control:focus {
+		/* border-color: #5cd3b4; */
+		border-color: #aa2f10;
+	}
+    .form-control, .btn {        
+        border-radius: 3px;
+    }
+	.signup-form {
+		width: 500px;
+		margin: 0 auto;
+		padding: 30px 0;
+	}
+    .signup-form h2 {
+		color: #333;
+        margin: 0 0 30px 0;
+		display: inline-block;
+		padding: 0 20px 10px 0;
+		border-bottom: 3px solid #aa2f10;
+
+    }
+    .signup-form form {
+		color: rgb(133, 127, 127);
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: #fff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form .form-group {
+		margin-bottom: 20px;
+	}
+	.signup-form label {
+		font-weight: normal;
+		font-size: 13px;
+	}
+
+    .signup-form .btn {        
+        font-size: 16px;
+        font-weight: bold;
+		background: #aa2f10;
+
+		border: none;
+		margin-top: 20px;
+		min-width: 140px;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		
+		background: #aa2f10;
+        outline: none !important;
+	}
+    .signup-form a {
+		/* color: #5cd3b4; */
+		color: #aa2f10;
+		text-decoration: underline;
+	}
+	.signup-form a:hover {
+		text-decoration: none;
+	}
+    .signup-form form a {
+		color: #5cd3b4;
+		text-decoration: none;
+	}	
+	.signup-form form a:hover {
+		text-decoration: underline;
+	}
+</style>
+</head>
+<body>
+<div class="signup-form">
+     <form action="/examples/actions/confirmation.php" method="post" class="form-horizontal" > 
+	 <!-- <form [formGroup]="exform" method="post" class="form-horizontal" > -->
+
+		<div class="col-xs-8 col-xs-offset-4">
+			<h2>Registration Form</h2>
+		</div>		
+        <div class="form-group">
+			<label class="control-label col-xs-4">Firstname</label>
+			<div class="col-xs-8">
+             <input type="text" class="form-control" name="name" [(ngModel)]="service.u.name" required="required">
+				<!-- <input type="text" class="form-control" formControlName="name" >
+				<span *ngIf="exform.controls['name'].touched && exform.controls['name'].invalid">Name is required</span> -->
+
+            </div>        	
+        </div>
+
+        <div class="form-group">
+			<label class="control-label col-xs-4">Lastname</label>
+			<div class="col-xs-8">
+             <input type="text" class="form-control" name="surname" [(ngModel)]="service.u.surname" required="required"> 
+				<!-- <input type="text" class="form-control" formControlName="surname">
+				<span *ngIf="exform.controls['surname'].touched && exform.controls['surname'].invalid">Name is required</span> -->
+
+            </div>        	
+        </div>
+
+        <div class="form-group">
+			<label class="control-label col-xs-4">City</label>
+			<div class="col-xs-8">
+             <input type="text" class="form-control" name="city" [(ngModel)]="service.u.city" > 
+				<!-- <input type="text" class="form-control" formControlName="city"> -->
+
+            </div>        	
+        </div>
+
+        <div class="form-group">
+			<label class="control-label col-xs-4">Pincode</label>
+			<div class="col-xs-8">
+                 <input type="text" class="form-control" name="pincode" [(ngModel)]="service.u.pincode" required="required"> 
+				<!-- <input type="text" class="form-control" formControlName="pincode">
+				 <span *ngIf="exform.controls['pincode'].touched && exform.controls['pincode'].invalid">pincode is required</span> -->
+
+            </div>        	
+        </div>
+
+		<div class="form-group">
+			<label class="control-label col-xs-4">Email Address</label>
+			<div class="col-xs-8">
+                 <input type="email" class="form-control" name="email"  [(ngModel)]="service.u.email" required="required"> 
+                <!-- <input type="email" class="form-control" formControlName="email">
+				<span *ngIf="exform.controls['email'].touched && exform.controls['email'].invalid">email is required</span>> -->
+
+			</div>        	
+        </div>
+
+		<div class="form-group">
+			<label class="control-label col-xs-4">DOB</label>
+			<div class="col-xs-8">
+                <input type="date" class="form-control" name="dob" [(ngModel)]="service.u.dob" required="required"> 
+				<!-- <input type="date" class="form-control" formControlName="dob"> -->
+
+            </div>        	
+        </div>
+
+		<div class="form-group">
+			<label class="control-label col-xs-4">Joining Date</label>
+			<div class="col-xs-8">
+                <input type="date" class="form-control" name="joiningDate" [(ngModel)]="service.u.joiningDate" required="required"> 
+				<!-- <input type="date" class="form-control" formControlName="joiningDate"> -->
+
+            </div>        	
+        </div>
+
+        <div class="form-group">
+			<label class="control-label col-xs-4">Income</label>
+			<div class="col-xs-8">
+                 <input type="text" class="form-control" name="income" [(ngModel)]="service.u.income" required="required">
+				<!-- <input type="text" class="form-control" formControlName="income"> -->
+
+            </div>        	
+        </div>
+        
+		<div class="form-group">
+			<div class="col-xs-8 col-xs-offset-4">
+				<button type="submit" class="btn btn-primary btn-lg" (click)="submitdata(service.u)">Submit</button>
+			</div>  
+		</div>		      
+    </form>
+</div>
+</body>
+</html>

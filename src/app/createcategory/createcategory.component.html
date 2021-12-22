@@ -1,0 +1,51 @@
+<!-- <p>createcategory works!</p> -->
+
+<form [formGroup]="catgoeryRegForm" (ngSubmit)='onRegister()'>
+
+    
+<b><label class="col-sm-3 control-label">CatogeryName: </label></b>&nbsp;&nbsp;
+    <input type="text"  formControlName="cName"  placeholder="Enter catogeryName"><br><br>
+
+<b><label class="col-sm-3 control-label">Ratings: </label></b>&nbsp;&nbsp;
+     <div class="col-md-3 selectContainer">
+        <select  class="form-control selectpicker"  formControlName="rating">
+            <option value="">Select rating</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+
+    </div>
+    
+
+    <div class="form-group" formArrayName="subCategories">
+      
+        <label class="col-sm-2 control-label">SubcatogeryName</label><br>
+        <div class="col-sm-10" *ngFor=" let group of SubcatArray.controls; let i=index;" [formGroupName]='i'>
+        
+                <br> <div class="" >
+                
+                        <div class="form-group">
+                                <input type="hidden"  class="" value="" />
+                                <input type="text"  formControlName="sName" placeholder="Enter SubcatogeryName" /><br>
+                        </div>
+                        
+                </div>
+       
+                
+                <button type="button"(click)="addSubCat()"> Add subCatogery</button>&nbsp;
+                <button type="button"(click)="removeSubcatArray(i)">Remove</button> 
+        </div><br>
+        
+     </div>
+
+
+                <button type="submit">Submit</button>
+
+ 
+
+
+</form>
+ 

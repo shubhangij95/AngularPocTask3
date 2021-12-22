@@ -1,0 +1,96 @@
+<!-- <p>categorydetails works!</p> -->
+
+<style>
+    body {
+        color: #566787;
+        background: #f5f5f5;
+        font-family: 'Roboto', sans-serif;
+    }
+    .table-title h2 {
+        margin: 5px 0 0;
+        font-size: 24px;
+    }
+    .table-title select {
+        border-color: #ddd;
+        border-width: 0 0 1px 0;
+        padding: 3px 10px 3px 5px;
+        margin: 0 5px;
+    }
+    .search-box input:focus {
+        border-color: #3FBAE4;
+    }
+  
+    table.table td a {
+        color: #a0a5b1;
+        display: inline-block;
+        margin: 0 5px;
+    }
+    table.table td a.view {
+        color: #03A9F4;
+    }
+    table.table td a.edit {
+        color: #FFC107;
+    }
+    table.table td a.delete {
+        color: #E34724;
+    }
+    table.table td i {
+        font-size: 19px;
+    }    
+    .hint-text {
+        float: left;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+    table.table td {
+      width: 130px;
+  }
+    </style>
+  
+  
+  
+  
+  
+  
+  
+  <!-- <nav class="navbar">
+      <input class="form-control" type="text" name="name" [(ngModel)]="name" (ngModelChange)="search()"
+      placeholder="Enter first name to search">
+      </nav> -->
+  <form>
+
+   <div class="container">
+      <table class="table table-striped table-bordered " style="width: 100%; "  >
+
+        <tbody>
+          <tr *ngFor="let c of categorylist">
+            <td><b> {{c.cId}}.
+                {{c.cName}}</b>&nbsp;&nbsp;&nbsp; <select>
+                    <option value="">----Select----</option>
+
+                    <option *ngFor="let p of rate">
+                      <a>{{p}}</a>
+                      
+                    </option>
+                  </select> <br>
+                  <div *ngFor="let b of c.subCategories">
+                      <br>{{b.sName}}<br>
+              
+                  </div>
+            </td> 
+            </tr>
+        </tbody>
+
+       </table>
+    </div> 
+    <P> 
+        <input class="btn btn-primary" type="submit" (click)="submitdata()" value="Submit">
+	</P>
+</form>
+<!-- 
+<div class="text-left">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div> -->
+  
+
+    

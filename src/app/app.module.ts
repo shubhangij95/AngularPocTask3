@@ -5,22 +5,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateUserComponent } from './create-user/create-user.component';
-import { UserListCompComponent } from './user-list-comp/user-list-comp.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SelectprofileComponent } from './selectprofile/selectprofile.component';
+import { CreatecategoryComponent } from './createcategory/createcategory.component';
+import { CategorydetailsComponent } from './categorydetails/categorydetails.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateUserComponent,
-    UserListCompComponent,
-    UserDetailsComponent,
-    UpdateUserComponent
+    SelectprofileComponent,
+    CreatecategoryComponent,
+    CategorydetailsComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

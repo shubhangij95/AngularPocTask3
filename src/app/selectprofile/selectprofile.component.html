@@ -1,0 +1,29 @@
+<!-- <p>selectprofile works!</p> -->
+<h4>select profile</h4>
+<form>
+<div>
+  <select>
+    <option *ngFor="let p of experience">
+      <a routerLink="categorydetails">{{p}}</a>
+      
+    </option>
+  </select>
+  </div>
+
+   <button type="submit" (click)="submitdata(service.profile)">Submit</button> 
+  </form>
+  <!-- <div class="dropdown" mdbDropdown>
+
+    <button mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle waves-light" type="button"
+      mdbWavesEffect>
+      Dropdown primary
+    </button>
+  
+  
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div> -->

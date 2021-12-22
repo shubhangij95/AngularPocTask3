@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../model/user';
+import { Profile } from '../model/profile';
+import { Catogories } from '../model/catogories';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,55 +13,54 @@ export class CommonService {
 
   button:string="submit";
 
-u:User={
-  id:0,
-  name:" ",
-  surname:" ",
-  city:" ",
-  pincode:0,
-  email:" ",
-  dob:" ",
-  joiningDate:" ",
-  income:0,
-  deleted:false
+
+profile:Profile={
+  profileId:0,
+  profileName:" "
 }
 
-url:string="http://localhost:8083/register";
 
-url1:string="http://localhost:8083/list";
+category:Catogories={
 
-url2:string="http://localhost:8083/delete";
+  cId:0,
+  cName:" ",
+  rating:" ",
+  subCategories:[{
+    sId:0,
+    sName:" "
 
-url3:string="http://localhost:8083/getSingleUser";
-
-url4:string="http://localhost:8083/update";
-
-
-
-
-postdata(s:User)
-{
-  return this.http.post(this.url,s);
+  }]
 }
 
-getdata():Observable<User[]>
-{
-  return this.http.get<User[]>(this.url1);
-}
 
-datadeleted(id:number)
-{
-  return this.http.delete(this.url2 + '/' +id);
-}
+ url:string="http://localhost:8083/savedata";
 
-getSingleUser(id: number): Observable<any> 
-{
-  return this.http.get(this.url3 + '/' + id);
-}
+ url1:string="http://localhost:8083/getdata";
 
-updateEmployee(value: any,id:number): Observable<Object> {
-  return this.http.put(this.url4, value);
-}
 
+
+
+
+
+//  postdata(p:Profile)
+//  {
+//    return this.http.post(this.url,p);
+//  }
+
+//  getdata():Observable<Profile[]>
+//  {
+//    return this.http.get<Profile[]>(this.url1);
+//  }
+
+ postcategorydata(c:Catogories)
+ {
+   return this.http.post(this.url,c);
+ }
+
+
+ getdata():Observable<Catogories[]>
+ {
+   return this.http.get<Catogories[]>(this.url1);
+  }
 
 }
